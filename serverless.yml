@@ -1,0 +1,83 @@
+service: starwars-marketplace-api
+
+plugins:  
+  - serverless-offline
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs20.x
+  stage: dev
+  memorySize: 128
+  logRetentionInDays: 1
+  timeout: 15
+  environment:
+    DYNAMODB_TABLE: StarWarsMarketplace
+    HISTORY_TABLE: StarWarsMarketplaceHistory
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "dynamodb:PutItem"
+            - "dynamodb:GetItem"
+            - "dynamodb:Scan"
+            - "dynamodb:Query"   
+          Resource: 
+            - "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/StarWarsMarketplace"
+            - "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/StarWarsMarketplaceHistory"
+
+functions:
+  main:
+    handler: dist/main.handler
+    events:
+      - http:
+          method: any
+          path: /{any+}
+
+
+package:
+  individually: true
+  exclude:
+    - node_modules/.bin/**
+    - node_modules/**/*.md
+    - node_modules/**/*.test.js
+    - node_modules/**/*.debug.js
+    - node_modules/**/*.spec.js
+    - node_modules/**/*.ts
+    - node_modules/**/*.tsbuildinfo
+    - node_modules/**/test/**
+    - node_modules/**/spec/**
+    - node_modules/**/docs/**
+    - node_modules/**/coverage/**
+    - node_modules/**/.cache/**
+    - node_modules/**/.eslintrc.js
+    - node_modules/**/.prettierrc
+    - node_modules/**/tsconfig.json
+    - node_modules/**/tsconfig.build.json
+    - node_modules/**/jestconfig.json
+
+resources:
+  Resources:
+    StarWarsMarketplaceTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
+        AttributeDefinitions:
+          - AttributeName: cacheKey
+            AttributeType: S
+        KeySchema:
+          - AttributeName: cacheKey
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST # Escala automáticamente con el uso
+    StarWarsMarketplaceHistoryTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: StarWarsMarketplaceHistory
+        AttributeDefinitions:
+          - AttributeName: timestamp
+            AttributeType: N
+        KeySchema:
+          - AttributeName: timestamp
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST       
