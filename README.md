@@ -35,11 +35,44 @@ Este proyecto cumple con los siguientes puntos mínimos del MVP:
 7. Uso de **AWS Lambda y API Gateway** como infraestructura serverless.
 
 ---
+## Puntos Bonus
 
+El proyecto incluye los siguientes puntos bonus:
+
+1. **Documentación de los endpoints con Swagger/OpenAPI**:
+   - Swagger se encuentra disponible en `http://localhost:3000/api/docs`.
+
+2. **Uso de logging avanzado con AWS CloudWatch**:
+   - Los logs de errores y rendimiento se almacenan en AWS CloudWatch para facilitar la trazabilidad y el monitoreo.
+
+3. **Implementación de un sistema de rate-limiting**:
+   - Limita el número de solicitudes a los endpoints, previniendo el abuso de las APIs externas mediante la integración de `@nestjs/throttler`.
+
+---
+
+## Pruebas con Gherkin
+
+A continuación, se presenta un ejemplo de caso de uso descrito en lenguaje Gherkin para las pruebas del endpoint `/fusionados`:
+
+### Escenario: Obtener datos fusionados de Star Wars y MercadoLibre
+```gherkin
+Feature: Obtener datos fusionados
+  Como un usuario
+  Quiero consultar datos de personajes de Star Wars y productos relacionados de MercadoLibre
+  Para visualizar información combinada.
+
+  Scenario: Consultar datos exitosamente
+    Given el servicio está disponible
+    And los datos de SWAPI y MercadoLibre están accesibles
+    When el usuario envía una solicitud GET a "/fusionados"
+    Then el sistema debe responder con un código 200
+    And la respuesta debe incluir una lista de personajes y sus productos relacionados.
+```
+---
 ## Endpoints de la API
 
 ### General
-- **GET `/swagger`**: Documentacion con Swagger/OpenApi`.
+- **GET `/`**: Responde con un mensaje básico `"Hello World!"`.
 
 ### Datos Fusionados
 - **GET `/fusionados`**: Combina y devuelve datos de SWAPI y MercadoLibre.
@@ -66,9 +99,6 @@ Este proyecto cumple con los siguientes puntos mínimos del MVP:
 
 1. Clona el repositorio:
 
-   ```bash
-   git clone https://github.com/AdrianEsqueiros/starwars-marketplace-api.git
-   ```
 
 2. Cambia al directorio del proyecto:
 
@@ -154,4 +184,3 @@ npm run test
 - `RecordRepository`: Gestiona el historial de datos.
 
 ---
-
