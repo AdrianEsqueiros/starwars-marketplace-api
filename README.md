@@ -1,99 +1,157 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Star Wars Marketplace API
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Este proyecto es un backend desarrollado con **NestJS** y desplegado en **AWS Lambda** usando **Serverless Framework**. Su objetivo es integrar datos de personajes de **Star Wars** (a través de SWAPI) con productos de **MercadoLibre**, almacenando y gestionando esta información en **DynamoDB**.
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Características
 
-## Project setup
+- **NestJS** como framework backend.
+- **AWS Lambda** y **Serverless Framework** para arquitectura serverless.
+- **Integración de APIs**:
+  - SWAPI para obtener datos de personajes de Star Wars.
+  - MercadoLibre para buscar productos relacionados.
+- **DynamoDB** como base de datos NoSQL para almacenamiento y caché.
+- **Swagger** para documentación de API.
+- **TypeScript** para tipado estático y mayor seguridad en el código.
+- **Pruebas Unitarias e Integración** con Jest.
+- **Despliegue en AWS** mediante Serverless Framework.
+
+---
+
+## Puntos Mínimos Obligatorios del MVP
+
+Este proyecto cumple con los siguientes puntos mínimos del MVP:
+1. **Pruebas unitarias y de integración** utilizando Jest.
+2. **Uso de TypeScript** para tipado estático.
+3. **Endpoints desarrollados**:
+   - Un **GET** que combina datos de las APIs externas de SWAPI y MercadoLibre.
+   - Un **POST** para almacenar recursos en la base de datos.
+   - Un **GET** para consultar el historial de datos almacenados.
+4. **Cacheo de resultados** para evitar múltiples llamadas a las APIs dentro de un intervalo de 30 minutos.
+5. **Despliegue en AWS** utilizando Serverless Framework.
+6. **Almacenamiento en DynamoDB**.
+7. Uso de **AWS Lambda y API Gateway** como infraestructura serverless.
+
+---
+
+## Endpoints de la API
+
+### General
+- **GET `/swagger`**: Documentacion con Swagger/OpenApi`.
+
+### Datos Fusionados
+- **GET `/fusionados`**: Combina y devuelve datos de SWAPI y MercadoLibre.
+  - **Query Parameters**:
+    - `country` (opcional): País para buscar en MercadoLibre (default: `Peru`).
+    - `characterPage` (opcional): Página de personajes de SWAPI (default: `1`).
+    - `productPage` (opcional): Página de productos de MercadoLibre (default: `1`).
+    - `productLimit` (opcional): Límite de productos por personaje (default: `5`).
+
+### Crear Datos
+- **POST `/almacenar`**: Almacena datos fusionados de un personaje y sus productos.
+
+### Historial
+- **GET `/historial`**: Consulta datos almacenados.
+  - **Query Parameters**:
+    - `limit` (opcional): Límite de registros.
+    - `pageNumber` (opcional): Número de página.
+    - `sortKey` (opcional): Clave para ordenar.
+    - `sortOrder` (opcional): Orden (`ASC` o `DESC`).
+
+---
+
+## Instalación
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/AdrianEsqueiros/starwars-marketplace-api.git
+   ```
+
+2. Cambia al directorio del proyecto:
+
+   ```bash
+   cd starwars-marketplace-api
+   ```
+
+3. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+---
+
+## Despliegue
+
+### Localmente
+Ejecuta el servidor de manera local con `Serverless Offline`:
 
 ```bash
-$ npm install
+serverless offline
 ```
 
-## Compile and run the project
+### En AWS
+1. Configura tus credenciales de AWS:
+   ```bash
+   aws configure
+   ```
+
+2. Despliega el proyecto en AWS Lambda:
+   ```bash
+   serverless deploy
+   ```
+
+---
+
+## Documentación de Swagger
+
+Accede a la documentación de Swagger en:  
+`http://localhost:3000/dev/swagger`
+
+---
+
+## Base de Datos
+
+### Tablas DynamoDB
+1. **`StarWarsMarketplace`**:
+   - Clave primaria: `cacheKey` (string).
+   - Uso: Almacén temporal para datos fusionados.
+
+2. **`StarWarsMarketplaceHistory`**:
+   - Clave primaria: `timestamp` (número).
+   - Uso: Registro histórico de datos.
+
+### Modelo de Escalabilidad
+Ambas tablas están configuradas con `PAY_PER_REQUEST` para escalabilidad automática.
+
+---
+
+## Pruebas
+
+Ejecuta las pruebas unitarias con el siguiente comando:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm run test
 ```
 
-## Run tests
+---
 
-```bash
-# unit tests
-$ npm run test
+## Arquitectura
 
-# e2e tests
-$ npm run test:e2e
+### **Controladores**
+- `StarWarsMarketplaceController`: Maneja las solicitudes HTTP.
 
-# test coverage
-$ npm run test:cov
-```
+### **Servicios**
+- `StarWarsService`: Consume la API SWAPI.
+- `MercadoLibreService`: Consume la API de MercadoLibre.
+- `StarWarsMarketplaceService`: Lógica de negocio central.
 
-## Deployment
+### **Repositorios**
+- `StarWarsMarketplaceRepository`: Gestiona la caché.
+- `RecordRepository`: Gestiona el historial de datos.
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+---
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
