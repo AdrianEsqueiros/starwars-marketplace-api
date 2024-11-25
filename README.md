@@ -2,8 +2,9 @@
 # Star Wars Marketplace API
 
 Este proyecto es un backend desarrollado con **NestJS** y desplegado en **AWS Lambda** usando **Serverless Framework**. Su objetivo es integrar datos de personajes de **Star Wars** (a través de SWAPI) con productos de **MercadoLibre**, almacenando y gestionando esta información en **DynamoDB**.
-[text](https://8gy1bdyg6b.execute-api.us-east-1.amazonaws.com/dev/swagger)
+
 ---
+API Desplegada: https://8gy1bdyg6b.execute-api.us-east-1.amazonaws.com/dev/swagger
 
 ## Características
 
@@ -39,13 +40,16 @@ Este proyecto cumple con los siguientes puntos mínimos del MVP:
 
 El proyecto incluye los siguientes puntos bonus:
 
-1. **Documentación de los endpoints con Swagger/OpenAPI**:
-   - Swagger se encuentra disponible en `http://localhost:3000/api/docs`.
+1.**Autenticación para proteger los endpoints POST y GET /historial con JWT**:
+   - Se protegieron las rutas con jwt.
 
-2. **Uso de logging avanzado con AWS CloudWatch**:
+2. **Documentación de los endpoints con Swagger/OpenAPI**:
+   - Swagger se encuentra disponible en `https://8gy1bdyg6b.execute-api.us-east-1.amazonaws.com/dev/swagger`.
+
+3. **Uso de logging avanzado con AWS CloudWatch**:
    - Los logs de errores y rendimiento se almacenan en AWS CloudWatch para facilitar la trazabilidad y el monitoreo.
 
-3. **Implementación de un sistema de rate-limiting**:
+4. **Implementación de un sistema de rate-limiting**:
    - Limita el número de solicitudes a los endpoints, previniendo el abuso de las APIs externas mediante la integración de `@nestjs/throttler`.
 
 ---
