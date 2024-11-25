@@ -1,9 +1,17 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
 import { StarWarsMarketplaceService } from '@/application/services/star-wars-marketplace.service';
-import { ApiOperation, ApiResponse, ApiQuery, ApiTags } from '@nestjs/swagger';
+import {
+  ApiOperation,
+  ApiResponse,
+  ApiQuery,
+  ApiTags,
+  ApiBearerAuth,
+  ApiSecurity,
+} from '@nestjs/swagger';
 import { GenericResponseDto } from '@/shared/dtos/generic-response.dto';
 import { StarWarsMarketplaceDto } from '@/application/dtos/star-wars-marketplace.dto';
 import { Throttle } from '@nestjs/throttler';
+import { JwtAuthGuard } from '@/auth/jwt-auth.guard';
 
 @ApiTags('Star Wars Marketplace')
 @Controller('')
@@ -87,6 +95,9 @@ export class StarWarsMarketplaceController {
   }
 
   @Post('almacenar')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth('access-token')
+  @ApiSecurity('access-token')
   @ApiOperation({ summary: 'Almacenar un nuevo objeto Star Wars Marketplace' })
   async create(
     @Body() starWarsMarketplaceDto: StarWarsMarketplaceDto,
@@ -95,6 +106,9 @@ export class StarWarsMarketplaceController {
   }
 
   @Get('historial')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth('access-token')
+  @ApiSecurity('access-token')
   @ApiQuery({
     name: 'limit',
     description: 'Limit records per page ',

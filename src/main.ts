@@ -25,6 +25,14 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('Star Wars Marketplace')
     .addServer('/dev')
+    .addBearerAuth(
+      {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+      'access-token',
+    )
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

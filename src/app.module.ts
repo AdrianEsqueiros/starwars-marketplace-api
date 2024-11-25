@@ -17,10 +17,12 @@ import { RequestLoggerMiddleware } from './presentation/middlewares/request-logg
 import { ThrottlerModule } from '@nestjs/throttler';
 import { StarWarsMarketplaceRepository } from './infrastructure/repositories/star-wars-marketplace.repository';
 import { RecordRepository } from './infrastructure/repositories/record.repository';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     HttpModule,
+    AuthModule,
     ThrottlerModule.forRoot({
       throttlers: [
         {

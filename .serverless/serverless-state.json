@@ -14,7 +14,8 @@
       "timeout": 15,
       "environment": {
         "DYNAMODB_TABLE": "StarWarsMarketplace",
-        "HISTORY_TABLE": "StarWarsMarketplaceHistory"
+        "HISTORY_TABLE": "StarWarsMarketplaceHistory",
+        "SECRET_KEY": "d83dafcd57cb38b34c2650e46f22058224c63aa1454b68585685704d9b92a14c"
       },
       "iam": {
         "role": {
@@ -133,7 +134,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-                "S3Key": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z/main.zip"
+                "S3Key": "serverless/starwars-marketplace-api/dev/1732516832067-2024-11-25T06:40:32.067Z/main.zip"
               },
               "Handler": "dist/src/main.handler",
               "Runtime": "nodejs20.x",
@@ -143,7 +144,8 @@
               "Environment": {
                 "Variables": {
                   "DYNAMODB_TABLE": "StarWarsMarketplace",
-                  "HISTORY_TABLE": "StarWarsMarketplaceHistory"
+                  "HISTORY_TABLE": "StarWarsMarketplaceHistory",
+                  "SECRET_KEY": "d83dafcd57cb38b34c2650e46f22058224c63aa1454b68585685704d9b92a14c"
                 }
               },
               "Role": {
@@ -157,14 +159,14 @@
               "MainLogGroup"
             ]
           },
-          "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8": {
+          "MainLambdaVersionvNmWh23sugzmftt6jfVyAabKjiPtjKiUCymMcvm2Olk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "MainLambdaFunction"
               },
-              "CodeSha256": "jvwc7Xqa7e3LLWyfC3SHN41CrbYkAbc0B0xD4tElJyM="
+              "CodeSha256": "s6hJBP7Gwo0NkJuuIaEPueJAFU4dyTGKyFecolpJSqE="
             }
           },
           "ApiGatewayRestApi": {
@@ -240,7 +242,7 @@
               "MainLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1732515089291": {
+          "ApiGatewayDeployment1732516818597": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -338,7 +340,7 @@
           "MainLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
+              "Ref": "MainLambdaVersionvNmWh23sugzmftt6jfVyAabKjiPtjKiUCymMcvm2Olk"
             },
             "Export": {
               "Name": "sls-starwars-marketplace-api-dev-MainLambdaFunctionQualifiedArn"
@@ -398,7 +400,7 @@
         "timeout": 15,
         "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
+        "versionLogicalId": "MainLambdaVersionvNmWh23sugzmftt6jfVyAabKjiPtjKiUCymMcvm2Olk"
       }
     },
     "resources": {
@@ -481,7 +483,7 @@
         ],
         "artifactsS3KeyDirname": "serverless/starwars-marketplace-api/dev/code-artifacts",
         "deploymentBucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-        "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z"
+        "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732516832067-2024-11-25T06:40:32.067Z"
       },
       "resources": {
         "$ref": "$[\"service\"][\"resources\"]"
@@ -493,7 +495,7 @@
   },
   "package": {
     "individually": true,
-    "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z",
+    "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732516832067-2024-11-25T06:40:32.067Z",
     "artifact": ""
   }
 }

@@ -14,6 +14,7 @@ provider:
   environment:
     DYNAMODB_TABLE: StarWarsMarketplace
     HISTORY_TABLE: StarWarsMarketplaceHistory
+    SECRET_KEY: d83dafcd57cb38b34c2650e46f22058224c63aa1454b68585685704d9b92a14c
   iam:
     role:
       statements:

@@ -2,7 +2,7 @@
 # Star Wars Marketplace API
 
 Este proyecto es un backend desarrollado con **NestJS** y desplegado en **AWS Lambda** usando **Serverless Framework**. Su objetivo es integrar datos de personajes de **Star Wars** (a través de SWAPI) con productos de **MercadoLibre**, almacenando y gestionando esta información en **DynamoDB**.
-
+[text](https://8gy1bdyg6b.execute-api.us-east-1.amazonaws.com/dev/swagger)
 ---
 
 ## Características
