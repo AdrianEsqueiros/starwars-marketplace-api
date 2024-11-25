@@ -105,9 +105,9 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-          "S3Key": "serverless/starwars-marketplace-api/dev/1732470110687-2024-11-24T17:41:50.687Z/main.zip"
+          "S3Key": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z/main.zip"
         },
-        "Handler": "dist/main.handler",
+        "Handler": "dist/src/main.handler",
         "Runtime": "nodejs20.x",
         "FunctionName": "starwars-marketplace-api-dev-main",
         "MemorySize": 128,
@@ -129,14 +129,14 @@
         "MainLogGroup"
       ]
     },
-    "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4": {
+    "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MainLambdaFunction"
         },
-        "CodeSha256": "fov/NXvB71wxpfpMcT7ylm/fSlvpEOC6gTBUT+Pt63Y="
+        "CodeSha256": "jvwc7Xqa7e3LLWyfC3SHN41CrbYkAbc0B0xD4tElJyM="
       }
     },
     "ApiGatewayRestApi": {
@@ -212,7 +212,7 @@
         "MainLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1732470090019": {
+    "ApiGatewayDeployment1732515089291": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -310,7 +310,7 @@
     "MainLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4"
+        "Ref": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
       },
       "Export": {
         "Name": "sls-starwars-marketplace-api-dev-MainLambdaFunctionQualifiedArn"

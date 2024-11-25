@@ -1,5 +1,5 @@
 {
-  "/home/adrianesqueiros/starwars-marketplace-api": {
+  "/home/adrianesqueiros/sinapsis/starwars-marketplace-api": {
     "versionSfCore": null,
     "versionFramework": "4.4.11",
     "isWithinCompose": false,
@@ -154,9 +154,9 @@
                     "Properties": {
                       "Code": {
                         "S3Bucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-                        "S3Key": "serverless/starwars-marketplace-api/dev/1732470110687-2024-11-24T17:41:50.687Z/main.zip"
+                        "S3Key": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z/main.zip"
                       },
-                      "Handler": "dist/main.handler",
+                      "Handler": "dist/src/main.handler",
                       "Runtime": "nodejs20.x",
                       "FunctionName": "starwars-marketplace-api-dev-main",
                       "MemorySize": 128,
@@ -178,14 +178,14 @@
                       "MainLogGroup"
                     ]
                   },
-                  "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4": {
+                  "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "MainLambdaFunction"
                       },
-                      "CodeSha256": "fov/NXvB71wxpfpMcT7ylm/fSlvpEOC6gTBUT+Pt63Y="
+                      "CodeSha256": "jvwc7Xqa7e3LLWyfC3SHN41CrbYkAbc0B0xD4tElJyM="
                     }
                   },
                   "ApiGatewayRestApi": {
@@ -261,7 +261,7 @@
                       "MainLambdaPermissionApiGateway"
                     ]
                   },
-                  "ApiGatewayDeployment1732470090019": {
+                  "ApiGatewayDeployment1732515089291": {
                     "Type": "AWS::ApiGateway::Deployment",
                     "Properties": {
                       "RestApiId": {
@@ -359,7 +359,7 @@
                   "MainLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4"
+                      "Ref": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
                     },
                     "Export": {
                       "Name": "sls-starwars-marketplace-api-dev-MainLambdaFunctionQualifiedArn"
@@ -397,7 +397,7 @@
             },
             "functions": {
               "main": {
-                "handler": "dist/main.handler",
+                "handler": "dist/src/main.handler",
                 "events": [
                   {
                     "http": {
@@ -409,18 +409,19 @@
                 ],
                 "name": "starwars-marketplace-api-dev-main",
                 "package": {
-                  "artifact": "/home/adrianesqueiros/starwars-marketplace-api/.serverless/main.zip"
+                  "artifact": "/home/adrianesqueiros/sinapsis/starwars-marketplace-api/.serverless/main.zip"
                 },
                 "memory": 128,
                 "timeout": 15,
                 "runtime": "nodejs20.x",
                 "vpc": {},
-                "versionLogicalId": "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4"
+                "versionLogicalId": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
               }
             },
             "package": {
               "individually": true,
               "exclude": [
+                "node_modules/aws-sdk/**",
                 "node_modules/.bin/**",
                 "node_modules/**/*.md",
                 "node_modules/**/*.test.js",
@@ -441,7 +442,7 @@
               ],
               "artifactsS3KeyDirname": "serverless/starwars-marketplace-api/dev/code-artifacts",
               "deploymentBucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-              "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732470110687-2024-11-24T17:41:50.687Z"
+              "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z"
             },
             "resources": {
               "Resources": {
@@ -487,7 +488,7 @@
               "Outputs": {}
             }
           },
-          "configFileDirPath": "/home/adrianesqueiros/starwars-marketplace-api",
+          "configFileDirPath": "/home/adrianesqueiros/sinapsis/starwars-marketplace-api",
           "config": {
             "type": "opt"
           },
@@ -652,9 +653,9 @@
                     "Properties": {
                       "Code": {
                         "S3Bucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-                        "S3Key": "serverless/starwars-marketplace-api/dev/1732470110687-2024-11-24T17:41:50.687Z/main.zip"
+                        "S3Key": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z/main.zip"
                       },
-                      "Handler": "dist/main.handler",
+                      "Handler": "dist/src/main.handler",
                       "Runtime": "nodejs20.x",
                       "FunctionName": "starwars-marketplace-api-dev-main",
                       "MemorySize": 128,
@@ -676,14 +677,14 @@
                       "MainLogGroup"
                     ]
                   },
-                  "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4": {
+                  "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "MainLambdaFunction"
                       },
-                      "CodeSha256": "fov/NXvB71wxpfpMcT7ylm/fSlvpEOC6gTBUT+Pt63Y="
+                      "CodeSha256": "jvwc7Xqa7e3LLWyfC3SHN41CrbYkAbc0B0xD4tElJyM="
                     }
                   },
                   "ApiGatewayRestApi": {
@@ -759,7 +760,7 @@
                       "MainLambdaPermissionApiGateway"
                     ]
                   },
-                  "ApiGatewayDeployment1732470090019": {
+                  "ApiGatewayDeployment1732515089291": {
                     "Type": "AWS::ApiGateway::Deployment",
                     "Properties": {
                       "RestApiId": {
@@ -857,7 +858,7 @@
                   "MainLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4"
+                      "Ref": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
                     },
                     "Export": {
                       "Name": "sls-starwars-marketplace-api-dev-MainLambdaFunctionQualifiedArn"
@@ -895,7 +896,7 @@
             },
             "functions": {
               "main": {
-                "handler": "dist/main.handler",
+                "handler": "dist/src/main.handler",
                 "events": [
                   {
                     "http": {
@@ -907,18 +908,19 @@
                 ],
                 "name": "starwars-marketplace-api-dev-main",
                 "package": {
-                  "artifact": "/home/adrianesqueiros/starwars-marketplace-api/.serverless/main.zip"
+                  "artifact": "/home/adrianesqueiros/sinapsis/starwars-marketplace-api/.serverless/main.zip"
                 },
                 "memory": 128,
                 "timeout": 15,
                 "runtime": "nodejs20.x",
                 "vpc": {},
-                "versionLogicalId": "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4"
+                "versionLogicalId": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
               }
             },
             "package": {
               "individually": true,
               "exclude": [
+                "node_modules/aws-sdk/**",
                 "node_modules/.bin/**",
                 "node_modules/**/*.md",
                 "node_modules/**/*.test.js",
@@ -939,7 +941,7 @@
               ],
               "artifactsS3KeyDirname": "serverless/starwars-marketplace-api/dev/code-artifacts",
               "deploymentBucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-              "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732470110687-2024-11-24T17:41:50.687Z"
+              "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z"
             },
             "resources": {
               "Resources": {
@@ -985,7 +987,7 @@
               "Outputs": {}
             }
           },
-          "configFileDirPath": "/home/adrianesqueiros/starwars-marketplace-api",
+          "configFileDirPath": "/home/adrianesqueiros/sinapsis/starwars-marketplace-api",
           "config": {
             "type": "self"
           },
@@ -1150,9 +1152,9 @@
                     "Properties": {
                       "Code": {
                         "S3Bucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-                        "S3Key": "serverless/starwars-marketplace-api/dev/1732470110687-2024-11-24T17:41:50.687Z/main.zip"
+                        "S3Key": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z/main.zip"
                       },
-                      "Handler": "dist/main.handler",
+                      "Handler": "dist/src/main.handler",
                       "Runtime": "nodejs20.x",
                       "FunctionName": "starwars-marketplace-api-dev-main",
                       "MemorySize": 128,
@@ -1174,14 +1176,14 @@
                       "MainLogGroup"
                     ]
                   },
-                  "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4": {
+                  "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "MainLambdaFunction"
                       },
-                      "CodeSha256": "fov/NXvB71wxpfpMcT7ylm/fSlvpEOC6gTBUT+Pt63Y="
+                      "CodeSha256": "jvwc7Xqa7e3LLWyfC3SHN41CrbYkAbc0B0xD4tElJyM="
                     }
                   },
                   "ApiGatewayRestApi": {
@@ -1257,7 +1259,7 @@
                       "MainLambdaPermissionApiGateway"
                     ]
                   },
-                  "ApiGatewayDeployment1732470090019": {
+                  "ApiGatewayDeployment1732515089291": {
                     "Type": "AWS::ApiGateway::Deployment",
                     "Properties": {
                       "RestApiId": {
@@ -1355,7 +1357,7 @@
                   "MainLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4"
+                      "Ref": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
                     },
                     "Export": {
                       "Name": "sls-starwars-marketplace-api-dev-MainLambdaFunctionQualifiedArn"
@@ -1393,7 +1395,7 @@
             },
             "functions": {
               "main": {
-                "handler": "dist/main.handler",
+                "handler": "dist/src/main.handler",
                 "events": [
                   {
                     "http": {
@@ -1405,18 +1407,19 @@
                 ],
                 "name": "starwars-marketplace-api-dev-main",
                 "package": {
-                  "artifact": "/home/adrianesqueiros/starwars-marketplace-api/.serverless/main.zip"
+                  "artifact": "/home/adrianesqueiros/sinapsis/starwars-marketplace-api/.serverless/main.zip"
                 },
                 "memory": 128,
                 "timeout": 15,
                 "runtime": "nodejs20.x",
                 "vpc": {},
-                "versionLogicalId": "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4"
+                "versionLogicalId": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
               }
             },
             "package": {
               "individually": true,
               "exclude": [
+                "node_modules/aws-sdk/**",
                 "node_modules/.bin/**",
                 "node_modules/**/*.md",
                 "node_modules/**/*.test.js",
@@ -1437,7 +1440,7 @@
               ],
               "artifactsS3KeyDirname": "serverless/starwars-marketplace-api/dev/code-artifacts",
               "deploymentBucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-              "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732470110687-2024-11-24T17:41:50.687Z"
+              "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z"
             },
             "resources": {
               "Resources": {
@@ -1483,7 +1486,7 @@
               "Outputs": {}
             }
           },
-          "configFileDirPath": "/home/adrianesqueiros/starwars-marketplace-api",
+          "configFileDirPath": "/home/adrianesqueiros/sinapsis/starwars-marketplace-api",
           "config": {
             "type": "sls"
           },
@@ -1503,7 +1506,7 @@
       }
     },
     "composeServiceName": null,
-    "servicePath": "/home/adrianesqueiros/starwars-marketplace-api",
+    "servicePath": "/home/adrianesqueiros/sinapsis/starwars-marketplace-api",
     "serviceConfigFileName": "serverless.yml",
     "service": {
       "service": "starwars-marketplace-api",
@@ -1649,9 +1652,9 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-                  "S3Key": "serverless/starwars-marketplace-api/dev/1732470110687-2024-11-24T17:41:50.687Z/main.zip"
+                  "S3Key": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z/main.zip"
                 },
-                "Handler": "dist/main.handler",
+                "Handler": "dist/src/main.handler",
                 "Runtime": "nodejs20.x",
                 "FunctionName": "starwars-marketplace-api-dev-main",
                 "MemorySize": 128,
@@ -1673,14 +1676,14 @@
                 "MainLogGroup"
               ]
             },
-            "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4": {
+            "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "MainLambdaFunction"
                 },
-                "CodeSha256": "fov/NXvB71wxpfpMcT7ylm/fSlvpEOC6gTBUT+Pt63Y="
+                "CodeSha256": "jvwc7Xqa7e3LLWyfC3SHN41CrbYkAbc0B0xD4tElJyM="
               }
             },
             "ApiGatewayRestApi": {
@@ -1756,7 +1759,7 @@
                 "MainLambdaPermissionApiGateway"
               ]
             },
-            "ApiGatewayDeployment1732470090019": {
+            "ApiGatewayDeployment1732515089291": {
               "Type": "AWS::ApiGateway::Deployment",
               "Properties": {
                 "RestApiId": {
@@ -1854,7 +1857,7 @@
             "MainLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4"
+                "Ref": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
               },
               "Export": {
                 "Name": "sls-starwars-marketplace-api-dev-MainLambdaFunctionQualifiedArn"
@@ -1892,7 +1895,7 @@
       },
       "functions": {
         "main": {
-          "handler": "dist/main.handler",
+          "handler": "dist/src/main.handler",
           "events": [
             {
               "http": {
@@ -1904,18 +1907,19 @@
           ],
           "name": "starwars-marketplace-api-dev-main",
           "package": {
-            "artifact": "/home/adrianesqueiros/starwars-marketplace-api/.serverless/main.zip"
+            "artifact": "/home/adrianesqueiros/sinapsis/starwars-marketplace-api/.serverless/main.zip"
           },
           "memory": 128,
           "timeout": 15,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "MainLambdaVersion2tMu0fbHeEYWVHFXmuE6O9c5Z9TRDLshtLhmYD46F4"
+          "versionLogicalId": "MainLambdaVersionrYdtVfG6m3jrkFtIRhRfvRi4Oe8zn10XZQkX5nsSRb8"
         }
       },
       "package": {
         "individually": true,
         "exclude": [
+          "node_modules/aws-sdk/**",
           "node_modules/.bin/**",
           "node_modules/**/*.md",
           "node_modules/**/*.test.js",
@@ -1936,7 +1940,7 @@
         ],
         "artifactsS3KeyDirname": "serverless/starwars-marketplace-api/dev/code-artifacts",
         "deploymentBucket": "serverless-framework-deployments-us-east-1-e7af3a22-a802",
-        "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732470110687-2024-11-24T17:41:50.687Z"
+        "artifactDirectoryName": "serverless/starwars-marketplace-api/dev/1732515108337-2024-11-25T06:11:48.337Z"
       },
       "resources": {
         "Resources": {
@@ -1982,7 +1986,7 @@
         "Outputs": {}
       }
     },
-    "serviceRawFile": "service: starwars-marketplace-api\n\nplugins:  \n  - serverless-offline\n\nprovider:\n  name: aws\n  region: us-east-1\n  runtime: nodejs20.x\n  stage: dev\n  memorySize: 128\n  logRetentionInDays: 1\n  timeout: 15\n  environment:\n    DYNAMODB_TABLE: StarWarsMarketplace\n    HISTORY_TABLE: StarWarsMarketplaceHistory\n  iam:\n    role:\n      statements:\n        - Effect: \"Allow\"\n          Action:\n            - \"dynamodb:PutItem\"\n            - \"dynamodb:GetItem\"\n            - \"dynamodb:Scan\"\n            - \"dynamodb:Query\"   \n          Resource: \n            - \"arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/StarWarsMarketplace\"\n            - \"arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/StarWarsMarketplaceHistory\"\n\nfunctions:\n  main:\n    handler: dist/main.handler\n    events:\n      - http:\n          method: any\n          path: /{any+}\n\n\npackage:\n  individually: true\n  exclude:\n    - node_modules/.bin/**\n    - node_modules/**/*.md\n    - node_modules/**/*.test.js\n    - node_modules/**/*.debug.js\n    - node_modules/**/*.spec.js\n    - node_modules/**/*.ts\n    - node_modules/**/*.tsbuildinfo\n    - node_modules/**/test/**\n    - node_modules/**/spec/**\n    - node_modules/**/docs/**\n    - node_modules/**/coverage/**\n    - node_modules/**/.cache/**\n    - node_modules/**/.eslintrc.js\n    - node_modules/**/.prettierrc\n    - node_modules/**/tsconfig.json\n    - node_modules/**/tsconfig.build.json\n    - node_modules/**/jestconfig.json\n\nresources:\n  Resources:\n    StarWarsMarketplaceTable:\n      Type: AWS::DynamoDB::Table\n      Properties:\n        TableName: ${self:provider.environment.DYNAMODB_TABLE}\n        AttributeDefinitions:\n          - AttributeName: cacheKey\n            AttributeType: S\n        KeySchema:\n          - AttributeName: cacheKey\n            KeyType: HASH\n        BillingMode: PAY_PER_REQUEST # Escala automáticamente con el uso\n    StarWarsMarketplaceHistoryTable:\n      Type: AWS::DynamoDB::Table\n      Properties:\n        TableName: StarWarsMarketplaceHistory\n        AttributeDefinitions:\n          - AttributeName: timestamp\n            AttributeType: N\n        KeySchema:\n          - AttributeName: timestamp\n            KeyType: HASH\n        BillingMode: PAY_PER_REQUEST       \n",
+    "serviceRawFile": "service: starwars-marketplace-api\n\nplugins:  \n  - serverless-offline\n\nprovider:\n  name: aws\n  region: us-east-1\n  runtime: nodejs20.x\n  stage: dev\n  memorySize: 128\n  logRetentionInDays: 1\n  timeout: 15\n  environment:\n    DYNAMODB_TABLE: StarWarsMarketplace\n    HISTORY_TABLE: StarWarsMarketplaceHistory\n  iam:\n    role:\n      statements:\n        - Effect: \"Allow\"\n          Action:\n            - \"dynamodb:PutItem\"\n            - \"dynamodb:GetItem\"\n            - \"dynamodb:Scan\"\n            - \"dynamodb:Query\"   \n          Resource: \n            - \"arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/StarWarsMarketplace\"\n            - \"arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/StarWarsMarketplaceHistory\"\n\nfunctions:\n  main:\n    handler: dist/src/main.handler\n    events:\n      - http:\n          method: any\n          path: /{any+}\n\n\npackage:\n  individually: true\n  exclude:\n    - node_modules/aws-sdk/**\n    - node_modules/.bin/**\n    - node_modules/**/*.md\n    - node_modules/**/*.test.js\n    - node_modules/**/*.debug.js\n    - node_modules/**/*.spec.js\n    - node_modules/**/*.ts\n    - node_modules/**/*.tsbuildinfo\n    - node_modules/**/test/**\n    - node_modules/**/spec/**\n    - node_modules/**/docs/**\n    - node_modules/**/coverage/**\n    - node_modules/**/.cache/**\n    - node_modules/**/.eslintrc.js\n    - node_modules/**/.prettierrc\n    - node_modules/**/tsconfig.json\n    - node_modules/**/tsconfig.build.json\n    - node_modules/**/jestconfig.json\n\nresources:\n  Resources:\n    StarWarsMarketplaceTable:\n      Type: AWS::DynamoDB::Table\n      Properties:\n        TableName: ${self:provider.environment.DYNAMODB_TABLE}\n        AttributeDefinitions:\n          - AttributeName: cacheKey\n            AttributeType: S\n        KeySchema:\n          - AttributeName: cacheKey\n            KeyType: HASH\n        BillingMode: PAY_PER_REQUEST # Escala automáticamente con el uso\n    StarWarsMarketplaceHistoryTable:\n      Type: AWS::DynamoDB::Table\n      Properties:\n        TableName: StarWarsMarketplaceHistory\n        AttributeDefinitions:\n          - AttributeName: timestamp\n            AttributeType: N\n        KeySchema:\n          - AttributeName: timestamp\n            KeyType: HASH\n        BillingMode: PAY_PER_REQUEST       \n",
     "command": [
       "deploy"
     ],
@@ -1991,7 +1995,7 @@
     },
     "error": null,
     "params": {},
-    "machineId": "42993ca46032f908cc5616df6d7641a0",
+    "machineId": "9f8fd35abf852cdd10babb60a81d982b",
     "stage": "dev",
     "accessKeyV2": "<REDACTED>",
     "accessKeyV1": "<REDACTED>",
@@ -2017,21 +2021,21 @@
     "versionSf": "4.4.11",
     "serviceProviderAwsCfStackName": "starwars-marketplace-api-dev",
     "integrations": {},
-    "serviceUniqueId": "arn:aws:cloudformation:us-east-1:892169938125:stack/starwars-marketplace-api-dev/849a6d20-aa85-11ef-ac37-0affc9d5aeb7",
-    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:892169938125:stack/starwars-marketplace-api-dev/849a6d20-aa85-11ef-ac37-0affc9d5aeb7",
-    "serviceProviderAwsCfStackCreated": "2024-11-24T16:59:50.497Z",
-    "serviceProviderAwsCfStackUpdated": "2024-11-24T17:42:07.568Z",
-    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
+    "serviceUniqueId": "arn:aws:cloudformation:us-east-1:892169938125:stack/starwars-marketplace-api-dev/31ce23b0-aaf4-11ef-8efe-124a16816a11",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:892169938125:stack/starwars-marketplace-api-dev/31ce23b0-aaf4-11ef-8efe-124a16816a11",
+    "serviceProviderAwsCfStackCreated": "2024-11-25T06:12:05.689Z",
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "MainLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:892169938125:function:starwars-marketplace-api-dev-main:54",
+        "OutputValue": "arn:aws:lambda:us-east-1:892169938125:function:starwars-marketplace-api-dev-main:57",
         "Description": "Current Lambda function version",
         "ExportName": "sls-starwars-marketplace-api-dev-MainLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "ServiceEndpoint",
-        "OutputValue": "https://4qb5uk470b.execute-api.us-east-1.amazonaws.com/dev",
+        "OutputValue": "https://8gy1bdyg6b.execute-api.us-east-1.amazonaws.com/dev",
         "Description": "URL of the service endpoint",
         "ExportName": "sls-starwars-marketplace-api-dev-ServiceEndpoint"
       },

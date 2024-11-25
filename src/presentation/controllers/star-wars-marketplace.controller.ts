@@ -11,10 +11,7 @@ export class StarWarsMarketplaceController {
   constructor(
     private readonly starWarsMarketplaceService: StarWarsMarketplaceService,
   ) {}
-  @Get()
-  getHello(): string {
-    return 'Hello World!';
-  }
+
   @Throttle({
     fusionados: { limit: 3, ttl: 60 }, // Máximo 3 intentos  en 60 segundos
     default: { limit: 10, ttl: 60 }, // Máximo 10 peticiones genéricas en 60 segundos
